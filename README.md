@@ -2,7 +2,7 @@
 
 The auto blessing script will execute every 30 minutes, if found any weak members, will cast blessing util everyone full hp or my mama empty, then post the result if blessing sucessfull at least once.
 
-![](https://i.imgur.com/ZWfGek1.png)
+![](https://i.imgur.com/CD9NFUV.png)
 
 ----
 
