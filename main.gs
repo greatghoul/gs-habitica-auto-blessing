@@ -22,9 +22,9 @@ function formatHP(hp) {
 
 function formatMember(member, hpFinal = -1) {
   if (hpFinal == -1) {
-    return `${formatHP(member.hp)} | &nbsp; | ${member.name}`;
+    return `- ${formatHP(member.hp)} : ${member.name}`;
   } else {
-    return `${formatHP(member.hp)} -> ${formatHP(hpFinal)} | &nbsp; | ${member.name}`;
+    return `- ${formatHP(member.hp)} -> ${formatHP(hpFinal)} : ${member.name}`;
   }
 }
 
@@ -44,9 +44,7 @@ function getWeakMembers() {
 function makeHealthReport(members) {
   const result = [
     '### WEAK MEMBERS',
-    '  ',
-    'HP     | &nbsp; | MEMBER',
-    '------ | ------ | --------------',
+    '-----',
     ...members.map(x => formatMember(x)),
   ];
   return result.join('\n');
@@ -55,9 +53,7 @@ function makeHealthReport(members) {
 function makeHealingReport(membersStart, membersFinal) {
   const result = [
     '### Blessing Result',
-    '  ',
-    'HP             | &nbsp; | MEMBER',
-    '-------------- | ------ | --------------',
+    '-----',
   ];
 
   membersStart.forEach(a => {
