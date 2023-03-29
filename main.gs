@@ -10,6 +10,8 @@ const HEADERS = {
   'x-api-key': USER_TOKEN
 };
 
+const LOW_HP = 35;
+
 let castsCount = 0;
 
 function formatHP(hp) {
@@ -38,7 +40,13 @@ function getWeakMembers() {
     }
   });
   members.sort((a, b) => a.hp - b.hp);
-  return members;
+
+  // If any mmeber in low hp, treat the whole party as weak.
+  if (members.find(x => x.hp < LOW_HP)) {
+    return members;
+  } else {
+    return [];
+  }
 }
 
 function makeHealthReport(members) {
